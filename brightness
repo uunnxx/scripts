@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+def set_new_value(arg)
+  %x{xrandr --output HDMI-A-0 --brightness #{arg/10}}
+  %x{xrandr --output DVI-D-0 --brightness #{arg/10}}
+end
+
+arg = ARGV[0].to_f
+set_new_value(arg)
